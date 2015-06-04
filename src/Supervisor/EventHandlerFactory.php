@@ -1,6 +1,7 @@
 <?php namespace Shift31\Supervisor;
 
 use Shift31\Supervisor\EventHandlers\HipChatHandler;
+use Shift31\Supervisor\EventHandlers\VictorOpsHandler;
 
 
 /**
@@ -23,6 +24,7 @@ class EventHandlerFactory
                 return new HipChatHandler($config);
                 break;
             case 'VictorOps':
+                return new VictorOpsHandler($config);
                 break;
             default:
                 throw new \Exception("No EventHandler for '$config->type'");

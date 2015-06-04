@@ -8,8 +8,14 @@ use Mtdowling\Supervisor\EventNotification;
 use Shift31\Supervisor\EventHandlerFactory;
 
 
-// todo - get config from /etc/supervisor/sen.json
-$config = json_decode(file_get_contents(__DIR__ . '/../sen.json'));
+if (file_exists('/etc/supervisor/sen.json')) {
+    $config = json_decode(file_get_contents('/etc/supervisor/sen.json'));
+} elseif (file_exists(__DIR__ . '/../sen.json')) { // for development/testing
+    $config = json_decode(file_get_contents(__DIR__ . '/../sen.json'));
+} else {
+    echo "No config file found! Please create /etc/supervisor/sen.json";
+    exit(1);
+}
 
 $listener = new EventListener();
 $listener->listen(function(EventListener $listener, EventNotification $event) use ($config) {

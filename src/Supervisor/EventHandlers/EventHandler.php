@@ -19,7 +19,7 @@ abstract class EventHandler implements HandlesEvents
 
     public function __construct()
     {
-        self::$fqdn = `hostname -f`;
+        self::$fqdn = empty(self::$fqdn) ? trim(`hostname -f`) : self::$fqdn;
     }
 
 
