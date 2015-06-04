@@ -1,0 +1,29 @@
+{
+  "name": "shift31/supervisor-event-notifier",
+  "description": "Sends notifications for Supervisor events",
+  "require": {
+    "php": ">=5.4",
+    "mtdowling/supervisor-event": "1.0.0",
+    "signiant/victoropsnotifier": "0.1.0",
+    "gorkalaucirica/hipchat-v2-api-client": "dev-master",
+    "illuminate/support": "^5.2@dev"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Shift 31",
+      "email": "code@shift31.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Shift31\\Supervisor\\": "src/Supervisor"
+    }
+  },
+  "config": {
+    "bin-dir": "bin",
+    "vendor-dir": "src/vendor"
+  }
+}

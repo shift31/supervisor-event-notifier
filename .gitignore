@@ -1,0 +1,6 @@
+composer.phar
+vendor/
+src/vendor
+sen.json
+.idea
+.vagrant
