@@ -8,12 +8,12 @@ use Mtdowling\Supervisor\EventNotification;
 use Shift31\Supervisor\EventHandlerFactory;
 
 
-if (file_exists('/etc/supervisor/sen.json')) {
-    $config = json_decode(file_get_contents('/etc/supervisor/sen.json'));
-} elseif (file_exists(__DIR__ . '/../sen.json')) { // for development/testing
-    $config = json_decode(file_get_contents(__DIR__ . '/../sen.json'));
+if (file_exists('/etc/supervisor-event-notifier.json')) {
+    $config = json_decode(file_get_contents('/etc/supervisor-event-notifier.json'));
+} elseif (file_exists(__DIR__ . '/../supervisor-event-notifier.json')) { // for development/testing
+    $config = json_decode(file_get_contents(__DIR__ . '/../supervisor-event-notifier.json'));
 } else {
-    echo "No config file found! Please create /etc/supervisor/sen.json";
+    echo "No config file found! Please create /etc/supervisor-event-notifier.json";
     exit(1);
 }
 

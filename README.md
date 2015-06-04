@@ -29,7 +29,7 @@ stderr_logfile=/var/log/supervisor/sen-err.log
 
 ### SEN
 
-Create `/etc/supervisor/sen.json`. Here's an example:
+Create `/etc/supervisor-event-notifier.json`. Here's an example:
 
 ```json
 {

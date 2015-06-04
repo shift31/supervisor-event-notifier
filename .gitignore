@@ -1,6 +1,6 @@
 composer.phar
 vendor/
 src/vendor
-sen.json
+supervisor-event-notifier.json
 .idea
 .vagrant
